@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f4f8f7;
+  color: #12212a;
+}
+
+.dark {
+  color-scheme: dark;
+  background: #091318;
+  color: #effdfa;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.glass-panel {
+  border: 1px solid rgba(18, 33, 42, 0.09);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+}
+
+.dark .glass-panel {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(13, 28, 35, 0.82);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(226, 232, 240, 0.8), rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.8));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.page-grid {
+  background-image:
+    linear-gradient(rgba(15, 143, 131, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 143, 131, 0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(15, 143, 131, 0.18);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
