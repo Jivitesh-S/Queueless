@@ -107,6 +107,34 @@ curl -X POST http://localhost:5000/api/tokens/join \
 - Database: use MongoDB Atlas and set `MONGO_URI`.
 - Configure CORS with the production frontend URL via `CLIENT_URL`.
 
+### Render Frontend Build Fix
+
+If deploying the frontend from the repository root on Render, keep the root `package.json` workspaces enabled and use:
+
+```bash
+npm install
+npm run build
+```
+
+Render should serve:
+
+```txt
+frontend/dist
+```
+
+If deploying only the frontend folder, set the service root directory to:
+
+```txt
+frontend
+```
+
+Then use:
+
+```bash
+npm install
+npm run build
+```
 ## Architecture
 
 The backend separates routes, controllers, services, models, middleware, socket publishing, and seed data. The frontend separates pages, layout, reusable UI, hooks, Zustand stores, and API/socket utilities.
+
