@@ -62,8 +62,8 @@ CLIENT_URL=http://localhost:5173
 Create `frontend/.env`:
 
 ```bash
-VITE_API_URL=http://localhost:5000/api
-VITE_SOCKET_URL=http://localhost:5000
+VITE_API_URL=https://queuelessb.onrender.com/api
+VITE_SOCKET_URL=https://queuelessb.onrender.com
 ```
 
 Seed demo data:
@@ -79,7 +79,7 @@ npm run dev
 ```
 
 - Frontend: http://localhost:5173
-- Backend API: http://localhost:5000/api/health
+- Backend API: https://queuelessb.onrender.com/api/health
 
 Demo admin:
 
@@ -89,13 +89,13 @@ Demo admin:
 ## API Examples
 
 ```bash
-curl -X POST http://localhost:5000/api/auth/login \
+curl -X POST https://queuelessb.onrender.com/api/auth/login \
   -H "Content-Type: application/json" \
   -d "{\"email\":\"admin@queueless.app\",\"password\":\"Password123!\"}"
 ```
 
 ```bash
-curl -X POST http://localhost:5000/api/tokens/join \
+curl -X POST https://queuelessb.onrender.com/api/tokens/join \
   -H "Content-Type: application/json" \
   -d "{\"queueId\":\"QUEUE_ID\",\"customerName\":\"Asha Mehta\",\"phone\":\"9999999999\"}"
 ```
@@ -137,4 +137,5 @@ npm run build
 ## Architecture
 
 The backend separates routes, controllers, services, models, middleware, socket publishing, and seed data. The frontend separates pages, layout, reusable UI, hooks, Zustand stores, and API/socket utilities.
+
 

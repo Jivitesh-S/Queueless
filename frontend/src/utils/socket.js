@@ -1,7 +1,8 @@
 import { io } from 'socket.io-client';
 
 export const createSocket = () =>
-  io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000', {
+  io(import.meta.env.VITE_SOCKET_URL || 'https://queuelessb.onrender.com', {
     autoConnect: true,
     transports: ['websocket']
   });
+
